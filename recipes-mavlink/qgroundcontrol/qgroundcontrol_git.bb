@@ -13,6 +13,7 @@ SRCREV = "cbb366b6d1846dde1623cbcbb91c66bac0d4d07b"
 SRC_URI = "gitsm://github.com/mavlink/qgroundcontrol.git;protocol=https \
            file://0001-QGCExternalLibs.pri-don-t-search-host-directoryies-f.patch \
            file://0001-utils_external.pri-add-consoleprocess_unix.cpp-to-al.patch \
+           file://0001-MainWindow-set-minimum-size-to-640x400.patch \
           "
 
 S = "${WORKDIR}/git"
