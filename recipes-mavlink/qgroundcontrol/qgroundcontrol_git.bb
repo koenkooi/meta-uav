@@ -9,7 +9,7 @@ inherit qt4x11
 DEPENDS += "udev libsdl espeak"
 
 PV = "2.01"
-SRCREV = "cbb366b6d1846dde1623cbcbb91c66bac0d4d07b"
+SRCREV = "6de9880710a0143a4aabf7e50e2b578498d9f50e"
 SRC_URI = "gitsm://github.com/mavlink/qgroundcontrol.git;protocol=https \
            file://0001-QGCExternalLibs.pri-don-t-search-host-directoryies-f.patch \
            file://0001-utils_external.pri-add-consoleprocess_unix.cpp-to-al.patch \
@@ -26,6 +26,7 @@ QMAKE_PROFILES = "qgroundcontrol.pro"
 # $CXX is used to see which platform we're on, fall back to linux instead of erroring out
 do_configure_prepend() {
 	sed -i -e 's:error(Unsupported build type):CONFIG += LinuxBuild:' ${S}/qgroundcontrol.pro
+	sed -i -e 's:(/usr/include/:(${STAGING_INCDIR}/:g' ${S}/QGCExternalLibs.pri
 }
 
 do_install_append() {
