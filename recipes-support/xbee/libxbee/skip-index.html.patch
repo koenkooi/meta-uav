@@ -1,0 +1,32 @@
+From 818c4d8e1784c1e048183900dbf80c78f0c7c700 Mon Sep 17 00:00:00 2001
+From: Koen Kooi <koen@dominion.thruhere.net>
+Date: Tue, 29 Apr 2014 21:41:46 +0200
+Subject: [PATCH] build.unix: don't build index.html
+
+Make errors out with:
+
+	| make: *** No rule to make target `man3/libxbee.3.html', needed by `html/index.html'.  Stop.
+
+Signed-off-by: Koen Kooi <koen@dominion.thruhere.net>
+
+Upstream-status: pending [present in repo as .patch file]
+---
+ make/build.unix.mk | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/make/build.unix.mk b/make/build.unix.mk
+index 4426940..7895206 100644
+--- a/make/build.unix.mk
++++ b/make/build.unix.mk
+@@ -85,6 +85,6 @@ $(addprefix $(HTMLDIR)/,$(filter-out index.html,$(SYS_HTMLPAGES))): $(HTMLDIR)/%
+ else                                           \
+ 	$(SYMLINK) -fs $(shell readlink $^).html $@; \
+ fi
+-$(HTMLDIR)/index.html: $(filter %libxbee.3.html,$(HTMLDIR)/$(SYS_HTMLPAGES))
+-	$(SYMLINK) -fs $(subst $(HTMLDIR)/,,$^) $@
++#$(HTMLDIR)/index.html: $(filter %libxbee.3.html,$(HTMLDIR)/$(SYS_HTMLPAGES))
++#	$(SYMLINK) -fs $(subst $(HTMLDIR)/,,$^) $@
+ endif
+-- 
+1.9.0
+
