@@ -1,0 +1,32 @@
+From 32bdcd2c6d60580dea95f6d9195cdcf1d67cd6a3 Mon Sep 17 00:00:00 2001
+From: Koen Kooi <koen@dominion.thruhere.net>
+Date: Sat, 3 May 2014 12:32:44 +0200
+Subject: [PATCH] Remove Bluefox libs from INSTALL, it's an x86* binary only
+ module
+
+Signed-off-by: Koen Kooi <koen@dominion.thruhere.net>
+---
+ cmake/InstallUtilities.cmake | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/cmake/InstallUtilities.cmake b/cmake/InstallUtilities.cmake
+index dc4cf4b..923145b 100644
+--- a/cmake/InstallUtilities.cmake
++++ b/cmake/InstallUtilities.cmake
+@@ -77,16 +77,4 @@ FUNCTION(PIXHAWK_INSTALL)
+   )
+   INSTALL(FILES ${MAVCONN_CORE_TIMER_HEADERS} DESTINATION ${PIXHAWK_INCLUDE_INSTALL_PATH}/core/timer/)
+ 
+-IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+-  SET(MAVCONN_CAMERA_LIBRARIES
+-	${CMAKE_BINARY_DIR}/lib/libmvBlueFOX.so
+-	${CMAKE_BINARY_DIR}/lib/libmvBlueFOX.so.2.5.4
+-	${CMAKE_BINARY_DIR}/lib/libmvDeviceManager.so
+-	${CMAKE_BINARY_DIR}/lib/libmvDeviceManager.so.2.5.4
+-	${CMAKE_BINARY_DIR}/lib/libmvPropHandling.so
+-	${CMAKE_BINARY_DIR}/lib/libmvPropHandling.so.2.5.4
+-  )
+-  INSTALL(FILES ${MAVCONN_CAMERA_LIBRARIES} DESTINATION "/usr/local/lib")
+-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+-
+ ENDFUNCTION(PIXHAWK_INSTALL)
