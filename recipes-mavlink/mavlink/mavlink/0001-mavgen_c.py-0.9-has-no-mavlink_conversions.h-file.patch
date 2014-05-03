@@ -1,0 +1,26 @@
+From 4d365c492aa779cc4e47f2a2adef691d85d6e482 Mon Sep 17 00:00:00 2001
+From: Koen Kooi <koen@dominion.thruhere.net>
+Date: Sat, 3 May 2014 10:06:32 +0200
+Subject: [PATCH] mavgen_c.py: 0.9 has no mavlink_conversions.h file
+
+Signed-off-by: Koen Kooi <koen@dominion.thruhere.net>
+---
+ pymavlink/generator/mavgen_c.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/pymavlink/generator/mavgen_c.py b/pymavlink/generator/mavgen_c.py
+index 982994a..1c8ffac 100644
+--- a/pymavlink/generator/mavgen_c.py
++++ b/pymavlink/generator/mavgen_c.py
+@@ -478,7 +478,7 @@ def copy_fixed_headers(directory, xml):
+     srcpath = os.path.join(basepath, 'C/include_v%s' % xml.wire_protocol_version)
+     print("Copying fixed headers")
+     for h in hlist:
+-        if (not (h == 'mavlink_protobuf_manager.hpp' and xml.wire_protocol_version == '0.9')):
++        if (not ((h == 'mavlink_protobuf_manager.hpp' or h == 'mavlink_conversions.h' )and xml.wire_protocol_version == '0.9')):
+            src = os.path.realpath(os.path.join(srcpath, h))
+            dest = os.path.realpath(os.path.join(directory, h))
+            if src == dest:
+-- 
+1.9.0
+
