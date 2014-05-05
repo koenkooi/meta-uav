@@ -9,7 +9,7 @@ inherit qt4x11
 DEPENDS += "udev libsdl espeak"
 
 PV = "2.01"
-SRCREV = "4afb95a6b59ab79ed1269a15328fc3e4da27a318"
+SRCREV = "fda0d238c8c837950652ddbfdb63fa39a2c76517"
 SRC_URI = "gitsm://github.com/mavlink/qgroundcontrol.git;protocol=https \
            file://0001-QGCExternalLibs.pri-don-t-search-host-directoryies-f.patch \
            file://0001-utils_external.pri-add-consoleprocess_unix.cpp-to-al.patch \
@@ -34,6 +34,7 @@ do_install_append() {
 	install -m 0755 release/qgroundcontrol ${D}${bindir}	
 
 	install -d ${D}${datadir}
+	# ${S}/files/images/icons/v2/t128.png
 }
 
 RDEPENDS_${PN} += "qt4-plugin-sqldriver-sqlite \
