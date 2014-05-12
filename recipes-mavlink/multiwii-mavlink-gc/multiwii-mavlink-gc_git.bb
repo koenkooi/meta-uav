@@ -3,7 +3,9 @@ SUMMARY = "Connecting Multiwii Flight Controler to QGroundControl with mavlink"
 LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://src/example/example.c;startline=4;endline=5;md5=a5277927ccb6e33acae15a339b476a81"
 
-SRC_URI = "git://github.com/treymarc/multiwii-mavlink-gc"
+SRC_URI = "git://github.com/treymarc/multiwii-mavlink-gc \
+           file://0001-mwgc-fix-communication-to-remote-groundstations.patch \
+          "
 SRCREV = "4c3167a3953dde781252d79bb0e269c55990cfb6"
 
 REALPV = "1.1"

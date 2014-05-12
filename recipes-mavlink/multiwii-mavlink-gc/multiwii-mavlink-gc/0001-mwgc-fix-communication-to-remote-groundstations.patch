@@ -1,0 +1,42 @@
+From cb5f0427647fce29e59353b50cab7cd6aa89f933 Mon Sep 17 00:00:00 2001
+From: Koen Kooi <koen@dominion.thruhere.net>
+Date: Mon, 12 May 2014 17:14:54 +0200
+Subject: [PATCH] mwgc: fix communication to remote groundstations
+
+Since commit b07024244d5a4961fa9641fab4e9f6ad601f1c58 the following
+didn't work anymore:
+
+   mwgc-1.1 -s /dev/ttyACM0 -ip 172.20.0.102
+
+The setup is as follows: arduino promicro -> usb -> SAMA5D3  xplained
+(172.20.0.160) -> UDP -> laptop (172.20.0.102)
+
+I left the flighsimulator address alone, since that has a comment saying
+it needs to be on localhost.
+
+Signed-off-by: Koen Kooi <koen@dominion.thruhere.net>
+---
+ src/mwgc/mwgc.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/mwgc/mwgc.c b/src/mwgc/mwgc.c
+index 8f54961..c2e3621 100644
+--- a/src/mwgc/mwgc.c
++++ b/src/mwgc/mwgc.c
+@@ -264,11 +264,11 @@ int main(int argc, char* argv[])
+     memset(&locAddr, 0, sizeof(locAddr));
+     locAddr.sin_family = AF_INET;
+     locAddr.sin_port = htons(14551);
+-    locAddr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
++    locAddr.sin_addr.s_addr = htonl(INADDR_ANY);
+ 
+     memset(&locGSAddr, 0, sizeof(locGSAddr));
+     locGSAddr.sin_family = AF_INET;
+-    locGSAddr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
++    locGSAddr.sin_addr.s_addr = inet_addr(mavlinkState->targetIp);
+     locGSAddr.sin_port = htons(14550); // TODO port number option
+ 
+     // Bind the socket to port 14551 - necessary to receive packets from qgroundcontrol
+-- 
+1.9.0
+
