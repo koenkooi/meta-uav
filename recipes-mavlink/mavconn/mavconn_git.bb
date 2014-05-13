@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://CMakeLists.txt;beginline=15;endline=30;md5=64c970c405
 DEPENDS = "glib-2.0 glibmm opencv libgtop mavlink gsl zlib lcm boost"
 #roscpp
 
-PV = "0.0"
+PV = "0.0+git${SRCPV}"
 SRCREV_mavconn = "b976cca26b2c468df08deaa59b8d518116c1f280"
 SRC_URI = "git://github.com/pixhawk/mavconn.git;name=mavconn \
            file://0001-Remove-Bluefox-libs-from-INSTALL-it-s-an-x86-binary-.patch \
