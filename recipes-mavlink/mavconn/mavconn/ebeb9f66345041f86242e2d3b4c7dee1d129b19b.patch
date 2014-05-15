@@ -1,0 +1,29 @@
+From ebeb9f66345041f86242e2d3b4c7dee1d129b19b Mon Sep 17 00:00:00 2001
+From: Koen Kooi <koen@dominion.thruhere.net>
+Date: Thu, 15 May 2014 19:11:46 +0000
+Subject: [PATCH] PxOpenCVCamera.cc: implement framerate setting
+
+Signed-off-by: Koen Kooi <koen@dominion.thruhere.net>
+---
+ src/interface/camera/PxOpenCVCamera.cc | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/src/interface/camera/PxOpenCVCamera.cc b/src/interface/camera/PxOpenCVCamera.cc
+index 34a81b6..dd95628 100644
+--- a/src/interface/camera/PxOpenCVCamera.cc
++++ b/src/interface/camera/PxOpenCVCamera.cc
+@@ -123,9 +123,8 @@ PxOpenCVCamera::grabFrame(cv::Mat& image, uint32_t& skippedFrames,
+ bool
+ PxOpenCVCamera::setFrameRate(float frameRate)
+ {
+-
+-
+-	return true;
++	
++	return camera->set(CV_CAP_PROP_FPS,frameRate);
+ }
+ 
+ bool
+-- 
+1.9.3
+
