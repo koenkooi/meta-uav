@@ -8,12 +8,10 @@ DEPENDS = "glib-2.0 glibmm opencv libgtop mavlink gsl zlib lcm boost"
 #roscpp
 
 PV = "0.0+git${SRCPV}"
-SRCREV_mavconn = "f2c042e5cad002a2fe740f9093361e9e93dabda1"
+SRCREV_mavconn = "7475d7fe71c0c205cfc4a5a76062db2dbe07ada5"
 SRC_URI = "git://github.com/pixhawk/mavconn.git;name=mavconn \
            file://0001-Remove-Bluefox-libs-from-INSTALL-it-s-an-x86-binary-.patch \
            file://baf4a55d4f4c7351897912f70148a14d5e587608.patch \
-           file://e4b1f43d5721bec0fbf2bedbaf5e4f9ce941fd36.patch \
-           file://ebeb9f66345041f86242e2d3b4c7dee1d129b19b.patch \
           "
 
 S = "${WORKDIR}/git"
