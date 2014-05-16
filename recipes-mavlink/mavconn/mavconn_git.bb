@@ -26,3 +26,7 @@ EXTRA_OECMAKE = " \
                  -DMAVLINK_TYPES_INCLUDE_DIR=${STAGING_INCDIR}/mavlink/v1.0 \
                 "
 
+# Shared libs don't have versioning :(
+FILES_${PN} += "${libdir}/*${SOLIBSDEV}"
+FILES_${PN}-dev = "${includedir}"
+INSANE_SKIP = "dev-so"
