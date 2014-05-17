@@ -9,11 +9,10 @@ inherit qt4x11
 DEPENDS += "udev libsdl espeak"
 
 PV = "2.01"
-SRCREV = "e1267cf4422258b861eabbce48398018dd29fff8"
+SRCREV = "2b2c826bc38c8f1add88926a792a6f058bc0dd20"
 SRC_URI = "gitsm://github.com/mavlink/qgroundcontrol.git;protocol=https \
            file://0001-QGCExternalLibs.pri-don-t-search-host-directoryies-f.patch \
            file://0001-utils_external.pri-add-consoleprocess_unix.cpp-to-al.patch \
-           file://0001-MainWindow-set-minimum-size-to-640x400.patch \
            file://0002-Make-HUD-the-center-widget-in-Flight-view.-Add-menu-.patch \
            file://0003-hud-is-a-tool-in-VIEW_FLIGHT.patch \
            file://0004-MainWindow-handle-maptool-widget-destroy-event.patch \
