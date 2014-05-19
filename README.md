@@ -16,6 +16,17 @@ The meta-uav layer depends on:
 	layers: meta-oe
 	branch: dora
 
+
+	URI: git://github.com/meta-qt5
+	layers: meta-qt5
+	branch: dora
+
+Optional:
+
+	URI: git://github.com/bmwcarit/meta-ros
+	layers: .
+	branch: master
+
 Please follow the recommended setup procedures of your OE distribution. For Angstrom that is http://www.angstrom-distribution.org/building-angstrom, other distros should have similar online resources.
 
 
