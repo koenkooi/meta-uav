@@ -8,8 +8,8 @@ inherit qt4x11
 
 DEPENDS += "udev libsdl espeak"
 
-PV = "2.01"
-SRCREV = "2b2c826bc38c8f1add88926a792a6f058bc0dd20"
+PV = "2.02"
+SRCREV = "aa7b4b459eefac9864b6d286f7b7c9de410b5ec7"
 SRC_URI = "gitsm://github.com/mavlink/qgroundcontrol.git;protocol=https \
            file://0001-QGCExternalLibs.pri-don-t-search-host-directoryies-f.patch \
            file://0001-utils_external.pri-add-consoleprocess_unix.cpp-to-al.patch \
