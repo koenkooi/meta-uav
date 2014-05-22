@@ -14,6 +14,8 @@ SRC_URI = "git://github.com/TauLabs/TauLabs.git;branch=next;protocol=https"
 
 S = "${WORKDIR}/git/ground/uavobjgenerator"
 
+OE_QMAKE_PATH_HEADERS = "${OE_QMAKE_PATH_QT_HEADERS}"
+
 do_install() {
 	install -d ${D}${bindir}
 	install -m0755 uavobjgenerator ${D}${bindir}
