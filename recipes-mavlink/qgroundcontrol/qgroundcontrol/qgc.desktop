@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=QGroundControl
+X-GNOME-FullName=GroundControl Station
+Comment=Ground control station for small air - land - water autonomous unmanned systems
+Exec=qgroundcontrol
+Terminal=false
+Type=Application
+StartupNotify=true
+Icon=qgroundcontrol
