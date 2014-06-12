@@ -9,13 +9,11 @@ inherit qt4x11
 DEPENDS += "udev libsdl espeak"
 
 PV = "2.03"
-SRCREV = "71e284cd8b1602111ebe58747f20a366dae33013"
+SRCREV = "abe60a9ade6bdbf2b1766e870625d95c9cad7905"
 SRC_URI = "gitsm://github.com/mavlink/qgroundcontrol.git;protocol=https \
            file://0001-QGCExternalLibs.pri-don-t-search-host-directoryies-f.patch \
            file://0001-utils_external.pri-add-consoleprocess_unix.cpp-to-al.patch \
-           file://0002-Make-HUD-the-center-widget-in-Flight-view.-Add-menu-.patch \
-           file://0003-hud-is-a-tool-in-VIEW_FLIGHT.patch \
-           file://0004-MainWindow-handle-maptool-widget-destroy-event.patch \
+           file://qgc.desktop \
          "
 
 S = "${WORKDIR}/git"
@@ -32,8 +30,11 @@ do_install_append() {
 	install -d ${D}${bindir}
 	install -m 0755 release/qgroundcontrol ${D}${bindir}	
 
-	install -d ${D}${datadir}
-	# ${S}/files/images/icons/v2/t128.png
+	install -d ${D}${datadir}/pixmaps
+	install -m 0644 ${S}/files/images/icons/v2/t128.png ${D}${datadir}/pixmaps/
+
+	install -d ${D}${datadir}/applications
+	install -m 0644 ${WORKDIR}/qgc.desktop ${D}${datadir}/applications/	
 }
 
 RDEPENDS_${PN} += "qt4-plugin-sqldriver-sqlite \
