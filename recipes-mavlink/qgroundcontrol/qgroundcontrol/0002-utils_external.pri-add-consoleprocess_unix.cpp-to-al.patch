@@ -1,7 +1,7 @@
-From d52a648ebf7f14063deeaca8614de6e25cc20e21 Mon Sep 17 00:00:00 2001
+From fe135104d73c64be096c463b3a2cffcbe545be55 Mon Sep 17 00:00:00 2001
 From: Koen Kooi <koen@dominion.thruhere.net>
 Date: Mon, 28 Apr 2014 15:01:38 +0200
-Subject: [PATCH] utils_external.pri: add consoleprocess_unix.cpp to all
+Subject: [PATCH 2/5] utils_external.pri: add consoleprocess_unix.cpp to all
  non-win32 platforms
 
 Upstream-status: Inapproriate [OE compiler name]

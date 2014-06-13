@@ -1,0 +1,26 @@
+From 287d75ac859195bc9b652710497f5cd2e96bf7ff Mon Sep 17 00:00:00 2001
+From: Koen Kooi <koen@dominion.thruhere.net>
+Date: Fri, 13 Jun 2014 09:20:25 +0200
+Subject: [PATCH 6/6] MainWindow: make PFD the central widget.
+
+Signed-off-by: Koen Kooi <koen@dominion.thruhere.net>
+---
+ src/ui/MainWindow.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/ui/MainWindow.cc b/src/ui/MainWindow.cc
+index ab2d786..cb820f2 100644
+--- a/src/ui/MainWindow.cc
++++ b/src/ui/MainWindow.cc
+@@ -556,7 +556,7 @@ void MainWindow::buildCommonWidgets()
+     {
+         pilotView = new SubMainWindow(this);
+         pilotView->setObjectName("VIEW_FLIGHT");
+-        pilotView->setCentralWidget(new HUD(640,480,this));
++        pilotView->setCentralWidget(new PrimaryFlightDisplay(this));
+         addToCentralStackedWidget(pilotView, VIEW_FLIGHT, "Pilot");
+     }
+ 
+-- 
+1.9.0
+
