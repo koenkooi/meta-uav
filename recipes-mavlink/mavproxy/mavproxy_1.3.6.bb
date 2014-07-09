@@ -4,7 +4,7 @@ HOMEPAGE = "http://tridge.github.io/MAVProxy/"
 LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://README.txt;md5=0937e1e6199a81c44d3c700a4f1b05bb"
 
-SRCREV = "b4ad1cb0c7d56a15ebb1756439e0e13520bf8a5e"
+SRCREV = "d26ffc3442ad4abf6c0ef752d620caf339ccd4e1"
 SRC_URI = "git://github.com/tridge/MAVProxy.git"
 
 S = "${WORKDIR}/git"
